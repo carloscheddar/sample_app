@@ -47,13 +47,13 @@ describe "Static pages" do
     end
     
     it "should have the base title" do
-      visit '/static_pages/About'
+      visit '/static_pages/about'
       page.should have_selector('title',
                                 :text => "Ruby on Rails Tutorial Sample App")
     end  
     
     it "should not have a custom page title" do
-      visit '/static_pages/About'
+      visit '/static_pages/about'
       page.should_not have_selector('title', :text => '| About')
     end
     
