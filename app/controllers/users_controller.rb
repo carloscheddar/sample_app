@@ -25,6 +25,11 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def feed
+    # This is preliminary. See "Following users" for the full implementation.
+    Micropost.where("user_id = ?", id)
+  end
+
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "User destroyed."
